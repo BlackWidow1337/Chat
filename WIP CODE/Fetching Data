@@ -1,0 +1,24 @@
+ #import the MySQLdb and sys modules
+
+
+
+import MySQLdb
+import sys
+# open a database connection
+# be sure to change the host IP address, username, password and database name to match your own
+connection = MySQLdb.connect("localhost", "root", "", "igtest")
+# prepare a cursor object using cursor() method
+cursor = connection.cursor ()
+# execute the SQL query using execute() method.
+cursor.execute ("select IP from user_pwd")
+# fetch all of the rows from the query
+row = cursor.fetchone ()
+# print the rows
+for row in row :
+     print (row)
+# close the cursor object
+cursor.close ()
+# close the connection
+connection.close ()
+# exit the program
+sys.exit()

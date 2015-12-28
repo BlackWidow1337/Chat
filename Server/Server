@@ -1,0 +1,49 @@
+# Echo server program
+# Author BlackWidow aka Zachary
+
+
+import socket
+import MySQLdb
+from threading import Thread
+import time
+
+
+
+print "Server is Online waiting users"
+HOST = '' # Symbolic name meaning all available interfaces
+PORT = 1010             # Arbitrary non-privileged port
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((HOST, PORT)) # Bind the host and port together
+s.listen(5) # Listen for the connection
+conn, addr = s.accept() # allow connection for the address
+print("Press Enter to start the server")
+#talk = raw_input("Send: ")
+
+#def clientHandler():
+ #   conn, addr = s.accept() # allow connection for the address
+#    if not data:
+#        print("Recieved Message",repr(databytes))
+
+#clientHandler()
+
+
+#print "Current Users Online", online
+i = True
+
+while i is True:
+    if(s.accept):
+        nigcon = MySQLdb.connect("localhost", "root", "", "igtest")
+        cursor = nigcon.cursor()
+        cursor.execute("select name from user_pwd")
+        username = cursor.fetchone()
+        print username, "Has Joined"
+        print 'Connected On', addr
+        while True:
+            databytes = conn.recv(1024) #T
+            if not databytes:
+                break
+            data = databytes.decode('utf-8') # the variable data is going  ever message is being sent from the client, and it's being decoded
+            print(username, (data)) # Prints the recieved data from the client
+#            for i in range(5):
+#                Thread(target=clientHandler).start()
+conn.close()

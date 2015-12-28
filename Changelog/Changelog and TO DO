@@ -1,0 +1,20 @@
+CHANGE LOG
+- User can now register and there information is saved into a mysql database
+- Command Server now has IP check for anybody trying to run the client
+- Login Menu verifys users information from the database
+- IP addresses are now be resolved & logged by anyone who runs the admin client
+- Basic Messaging is possible
+- User Can send data to the server.
+- Server can tell what user is sending the message
+- Made the file structure alot cleaner
+- Users can be meatspinned by an admin
+
+
+
+TO DO
+- Program needs to check the admin level of the user.
+- Develop a framework for commands.
+- Figure out how modules work in python.
+- Covert the script to a windows .exe.
+- Need to allow mutiple users to connect to the server.
+- Learn ow threading works in python
